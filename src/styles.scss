@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+$p-lg : 3rem;
+.p-lg{
+  padding: $p-lg;
+}
+.pv-lg {
+  padding-top: $p-lg;
+  padding-bottom: $p-lg;
+}
+.min-h{
+  min-height: 500px
+}
+.heding{
+  font-size: 1.5rem;
+  padding: 5px 0px 2px;
+  margin-bottom: 15px;
+  border-bottom: 1px solid #cfcfcf;
+  width: 30%;
+}
+.active{
+  background: white;
+  color: #209cee;
+}
