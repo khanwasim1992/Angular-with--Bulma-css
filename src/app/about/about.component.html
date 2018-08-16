@@ -1,3 +1,47 @@
-<p>
-  about works!
-</p>
+<div class="columns">
+  <div class="column">
+    <section class="hero is-light">
+      <div class="hero-body">
+        <div class="container">
+          <h1 class="title">
+            About us
+          </h1>
+          <p class="subtitle">
+             Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ut est vel natus autem,
+              molestiae accusamus perferendis atque veritatis voluptates enim ea doloribus?
+               Minima aperiam perferendis, amet repellat ad similique fuga?
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>
+<div class="columns">
+  <div class="column is-half is-offset-one-quarter mb-xl">
+    <h3 class="subtitle is-3 has-text-centered">Subscribe Our Notification</h3>
+    <form name="subscribe" #f="ngForm" (ngSubmit)="f.valid && onSubmit()"  novalidate>
+      <div class="field">
+        <div class="control has-icons-left has-icons-right">
+          <input class="input is-medium" type="email" name="email" [(ngModel)] ="subscriber.email" #email="ngModel" [ngClass]="{'is-danger': f.submitted && email.invalid}" placeholder="Enter Your Email Address" required email>
+          <span class="icon is-medium is-left">
+            <i class="fas fa-envelope"></i>
+          </span>
+          <span class="icon is-medium is-right">
+            <i class="fas fa-check"></i>
+          </span>
+        </div>
+        <div *ngIf="email.invalid && email.touched && email.dirty" class="has-text-danger">
+            <div *ngIf="email.errors.required">Email address is required</div>
+            <div *ngIf="email.errors.email">Must be a valid Email address</div>
+        </div>
+      </div>
+    <div class="field is-grouped is-grouped-centered">
+      <p class="control">
+        <button type="submit" class="button is-primary">
+          Submit
+        </button>
+      </p>
+    </div>
+  </form>
+  </div>
+</div>

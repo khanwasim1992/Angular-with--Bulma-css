@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  subscriber : any = {};
+
 
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onSubmit(){
+    alert(`Now You Have A mail On ${this.subscriber.email}`);
   }
 
 }

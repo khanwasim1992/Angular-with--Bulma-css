@@ -1,3 +1,69 @@
-<p>
-  contact works!
-</p>
+<div class="container pv-lg">
+
+    <div class="columns">
+    <div class="column is-6">
+     <h3 class="subtitle is-4">Contact us </h3>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()">
+        <div class="field">
+            <div class="control">
+              <input class="input" formControlName="fullName" [ngClass]="{'is-danger' : submitted && f.fullName.errors }" type="text" maxlength="50" placeholder="Full Name">
+            </div>
+            <div *ngIf="submitted && f.fullName.errors" class="has-text-danger">
+                <div *ngIf="f.fullName.errors.required">Name is required</div>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+              <input class="input" type="email" formControlName="email" [ngClass]="{'is-danger': submitted && f.email.errors}" maxlength="50" placeholder="Email Address">
+            </div>
+            <div *ngIf="submitted && f.email.errors" class="has-text-danger">
+                <div *ngIf="f.email.errors.required">Email Addres is required</div>
+                <div *ngIf="f.email.errors.email">Must be a valid Email address</div>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+              <input class="input" type="number" formControlName="mobile" [ngClass]="{'is-danger': submitted && f.mobile.errors }" maxlength="10" placeholder="Mobile Number">
+            </div>
+            <div *ngIf="submitted && f.mobile.errors" class="has-text-danger">
+                <div *ngIf="f.mobile.errors.required">Mobile number required.</div>
+              <div *ngIf="f.mobile.errors.maxLength">Invalid mobile number.</div>
+            </div>
+        </div>
+        <div class="field">
+            <div class="control">
+                <textarea class="textarea" formControlName="message" placeholder="e.g. Message"></textarea>
+            </div>
+        </div>
+        <div class="field is-grouped">
+            <p class="control">
+              <button [disabled]="disabled" class="button is-primary">
+                Submit
+              </button>
+            </p>
+          </div>
+    </form>
+   </div>
+   <div class="column is-6">
+      <h3 class="subtitle is-4">Address</h3>
+      <div>
+          <span class="icon">
+              <i class="fas fa-home"></i>
+          </span>
+            Manish Nagar Nagpur
+      </div>
+      <div>
+          <span class="icon">
+              <i class="fas fa-phone"></i>
+          </span>
+            +91-1234567890
+      </div>
+      <div>
+          <span class="icon">
+              <i class="fas fa-envelope"></i>
+          </span>
+            demo@basic.com
+      </div>
+   </div>
+  </div>
+</div>
