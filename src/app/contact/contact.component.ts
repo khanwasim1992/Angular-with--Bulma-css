@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { validateMobile } from '../validators/mobile.validator';
 
 @Component({
   selector: 'app-contact',
@@ -16,7 +17,7 @@ export class ContactComponent implements OnInit {
     this.contactForm = this.formBuilder.group({
        fullName : ['',Validators.required],
        email : ['',[Validators.required,Validators.email]],
-       mobile : ['',[Validators.required,Validators.maxLength(10)]],
+       mobile : ['',[Validators.required,validateMobile]],
        message : [''],
     })
   }

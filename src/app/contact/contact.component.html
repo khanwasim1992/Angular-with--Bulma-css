@@ -27,7 +27,7 @@
             </div>
             <div *ngIf="submitted && f.mobile.errors" class="has-text-danger">
                 <div *ngIf="f.mobile.errors.required">Mobile number required.</div>
-              <div *ngIf="f.mobile.errors.maxLength">Invalid mobile number.</div>
+                <div *ngIf="f.mobile.errors.validMobile">Invalid mobile number.</div>
             </div>
         </div>
         <div class="field">
